@@ -1,3 +1,3 @@
 class Tag < ApplicationRecord
-  has_many :destination
+  has_many :destinations
 end
