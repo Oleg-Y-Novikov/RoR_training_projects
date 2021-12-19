@@ -1,0 +1,12 @@
+<h3> Главная страница </h3>
+<%= link_to "Страница про нас", '/about' %>
+
+<% @posts.each do |post| %>
+  <div class="alert alert-light">
+    <h4> <%= post.title %> </h4>
+    <p> <%= post.body %> </p>
+    <%= link_to "Подробнее", post_path(post), :class => 'btn btn-outline-primary' %>
+  </div>
+<% end %>
+<br>
+<%= link_to "Добвить новый пост", '/posts/new' %>
