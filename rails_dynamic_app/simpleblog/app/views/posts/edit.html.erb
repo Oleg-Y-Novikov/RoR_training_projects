@@ -1,6 +1,11 @@
     <h3> Редактировние поста </h3>
     <%= form_for(@post) do |f| %>
-      <%= f.text_field :title, placeholder: 'Название' %><br>
-      <%= f.text_area :body, placeholder: 'Текст статьи' %><br>
-      <%= f.submit "Сохранить", class: 'btn' %>
+      <% if @post.errors.any? %>
+        <% @post.errors.full_messages.each do |error| %>
+          <div class="alert alert-danger"> <%= error %> </div>
+        <% end %>
+      <% end %>
+      <%= f.text_field :title, class: 'form-control' %><br>
+      <%= f.text_area :body, class: 'form-control' %><br>
+      <%= f.submit "Сохранить", class: 'btn btn-success' %>
     <% end %>
